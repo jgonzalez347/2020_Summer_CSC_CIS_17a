@@ -103,7 +103,7 @@ string stats(char data[][DAYS],char stat[][MONTHS]){
 }
 
 void prntDat(char data[][DAYS],int MONTHS){
-    string months[MONTHS]={"JUNE  ","JULY  ","AUGUST"};
+    string months[]={"JUNE  ","JULY  ","AUGUST"};
     cout<<"Weather Data for the Summer Months"<<endl;
     cout<<"        ";
     for(int day=0;day<DAYS;day++){
