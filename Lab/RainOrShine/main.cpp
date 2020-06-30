@@ -16,10 +16,10 @@ using namespace std;
 //User Libraries
 
 //Global Constants Only
-//Well known Science, Mathematical and Laboratory Constants, higher Dimensioned
-//Arrays
-const int DAYS=30; //Number of Days in the Summer Months
-const int MONTHS=3;//Number of Months for the Summer
+//Well known Science, Mathematical and Laboratory Constants, Higher Dimensioned
+//Arrays, and Conversions
+const unsigned char DAYS=30; //Number of Days in the Summer Months
+const unsigned char MONTHS=3;//Number of Months for the Summer
 
 //Function Prototypes
 void wrtFile(fstream &,char[]);                 //Write Weather Data
