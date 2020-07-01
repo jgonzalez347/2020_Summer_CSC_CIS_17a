@@ -108,7 +108,7 @@ void fil1t2(int array[],int row,int col){
 
 void filAray(int array[],int n){
     n=n<2?2:
-      n>COL?COL:n;
+    n>COL?COL:n;
     for(int i=0;i<n;i++){
         array[i]=rand()%90+10;//2 digit numbers
     }
