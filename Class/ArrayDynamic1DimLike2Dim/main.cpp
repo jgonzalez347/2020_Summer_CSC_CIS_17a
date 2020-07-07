@@ -27,7 +27,7 @@ void destroy(int *);
 void destroy(int **,int);
 
 //Program Execution Begins Here
-int main(int argc, char** argv) {
+int main(int argc, char* argv[]) {
     //Set the random number seed
     srand(static_cast<unsigned int>(time(0)));
 
@@ -58,7 +58,7 @@ int main(int argc, char** argv) {
 
 void destroy(int **array,int row){
     for(int r=0;r<row;r++){
-        delete []array[r];
+        delete []*(array+r);
     }
     delete []array;
 }
@@ -71,7 +71,7 @@ void prntAry(int **a,int row,int col){
     cout<<endl;
     for(int r=0;r<row;r++){
         for(int c=0;c<col;c++){
-            cout<<a[r][c]<<" ";//2 digit numbers
+            cout<<*(*(a+r)+c)<<" ";//2 digit numbers
         }
         cout<<endl;
     }
@@ -82,7 +82,7 @@ void prnt1t2(int *a,int row,int col){
     cout<<endl;
     for(int r=0;r<row;r++){
         for(int c=0;c<col;c++){
-            cout<<a[r*col+c]<<" ";//2 digit numbers
+            cout<<*(a+r*col+c)<<" ";//2 digit numbers
         }
         cout<<endl;
     }
@@ -107,7 +107,7 @@ int **filAray(int row,int col){
     for(int r=0;r<row;r++){
         array[r]=new int[col];
         for(int c=0;c<col;c++){
-            array[r][c]=rand()%90+10;//2 digit numbers
+            *(*(array+r)+c)=rand()%90+10;//2 digit numbers
         }
     }
     return array;
@@ -120,7 +120,7 @@ int *fil1t2(int row,int col){
     int *array=new int[n];
     for(int r=0;r<row;r++){
         for(int c=0;c<col;c++){
-            array[r*col+c]=rand()%90+10;//2 digit numbers
+            *(array+r*col+c)=rand()%90+10;//2 digit numbers
         }   
     }
     return array;
@@ -131,7 +131,7 @@ int *filAray(int n){
       n>1000?1000:n;
     int *array=new int[n];
     for(int i=0;i<n;i++){
-        array[i]=rand()%90+10;//2 digit numbers
+        *(array+i)=rand()%90+10;//2 digit numbers
     }
     return array;
 }
